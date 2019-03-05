@@ -7,9 +7,9 @@
         </aside>
         <div class="col-sm-8">
             @include('users.navtabs', ['user' => $user])
-            <div style="padding-left:40px">
-                @include('users.users', ['users' => $users])
-            </div>
+            @if (count($favorites) > 0)
+                @include('microposts.microposts', ['microposts' => $favorites])
+            @endif
         </div>
     </div>
 @endsection
